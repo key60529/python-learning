@@ -1,0 +1,39 @@
+# functions
+def ask_input(text) :
+  return input(text)
+
+def check_gender(gender) :
+  rules = {
+    "Boy": True,
+    "Girl": True,
+    "boy": True,
+    "girl": True
+  }
+  return rules.get(gender, False)
+
+
+# game main()
+print("Welcome to PUBG!")
+name = ask_input("What's your name: ")
+age = int(ask_input("Age: "))
+
+if age < 17 : 
+  print("Younger than 18 cannot play this game")
+else :
+  gender = ask_input("Boy or girl: ")
+  while not check_gender(gender) :
+    gender = ask_input("Please choose Boy or girl only: ")
+    
+  # gender = ask_input("Boy or girl: ")
+
+  # != not equal
+  # == equal
+  # if gender != "Boy" and gender != "girl": 
+    # gender = ask_input("Please type Boy or girl only: ")
+
+  mode = ask_input("Classic / Creative / Ranked: ")
+  if mode != "Classic" and mode != "Creative" and mode != "Ranked": 
+    mode = ask_input("Please choose Classic / Creative / Ranked only: ")
+
+  print("Character(" + gender + "): " + name)
+  print("Queuing in " + mode + " mode")
