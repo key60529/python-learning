@@ -2,6 +2,6 @@
 times = 0
 while times < 5 :
   print("abc")
-  times += 1
+  times = times + 1
 
 print('finished')
