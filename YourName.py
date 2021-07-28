@@ -11,6 +11,14 @@ def check_gender(gender) :
   }
   return rules.get(gender, False)
 
+def check_mode(mode) :
+  rules = {
+    "Classic": True,
+    "Creative": True,
+    "Ranked": True
+  }
+  return rules.get(mode, False)
+
 
 # game main()
 print("Welcome to PUBG!")
@@ -32,7 +40,7 @@ else :
     # gender = ask_input("Please type Boy or girl only: ")
 
   mode = ask_input("Classic / Creative / Ranked: ")
-  if mode != "Classic" and mode != "Creative" and mode != "Ranked": 
+  while not check_mode(mode) :
     mode = ask_input("Please choose Classic / Creative / Ranked only: ")
 
   print("Character(" + gender + "): " + name)
